@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sitemap.css">
+    <title>My Final Project Website</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0)" onclick="showPage('home')">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('about')">About</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="home" class="page">
+        <main>
+            <h1>Welcome to My Final Project Website!</h1>
+            <p>This is the homepage of my website where I introduce my project.</p>
+            <button onclick="showPage('about')">Learn More About Us</button>
+        </main>
+    </div>
+
+    <div id="about" class="page">
+        <main>
+            <h1>About Us</h1>
+            <p>This page contains information about the purpose of the website and its development.</p>
+            <button onclick="showPage('contact')">Get in Touch</button>
+        </main>
+    </div>
+
+    <div id="contact" class="page">
+        <main>
+            <h1>Contact Us</h1>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+                <button type="submit">Submit</button>
+            </form>
+            <button onclick="showPage('home')">Back to Home</button>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
